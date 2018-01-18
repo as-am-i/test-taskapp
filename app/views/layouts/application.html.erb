@@ -10,8 +10,14 @@
 
 <header>
 	<%= link_to("Home", "/") %>
+	<%= link_to("About", "/about") %>
 	<%= link_to("Tasks", "/tasks") %>
+	<%= link_to("New", "/tasks/new") %>
 </header>
+
+<% if flash[:notice] %>
+	<%= flash[:notice] %>
+<% end %>
 
 <%= yield %>
 

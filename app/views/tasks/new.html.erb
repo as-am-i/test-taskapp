@@ -1,0 +1,11 @@
+New Tasks
+
+<%= form_tag("/tasks") do %>
+		
+	<% @task.errors.full_messages.each do |error| %>
+		<%= error %>
+	<% end %>
+
+	<%= text_field_tag(:title, "#{@task.title}")%>
+	<%= submit_tag("Submit") %>
+<% end %>

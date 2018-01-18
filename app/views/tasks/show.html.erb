@@ -5,3 +5,8 @@
 <div>
 	<%= @task.created_at %>
 </div>
+
+<div>
+	<%= link_to("edit", "/tasks/#{@task.id}/edit") %>
+	<%= link_to("delete", "/tasks/#{@task.id}", method: "delete") %>
+</div>
