@@ -1,12 +1,12 @@
-# TASKS TO BE DONE
+= TASKS TO BE DONE
 
 This is a simple web pages to build a website with Ruby on Rails for the first time.
 
-## Try this website!
+== Try this website!
 You can store your own tasks on the following link.
 <https://taskstobedone.herokuapp.com/>
 
-## Environment
+== Environment
 * Ruby version: ruby 2.3.0p0
 * Rails version: Rails 4.2.7.1
 * Database: postgreSQL for heroku
