@@ -5,21 +5,51 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+
+  <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Exo+2|Supermercado+One" rel="stylesheet">
 </head>
+
 <body>
 
-<header>
-	<%= link_to("Home", "/") %>
-	<%= link_to("About", "/about") %>
-	<%= link_to("Tasks", "/tasks") %>
-	<%= link_to("New", "/tasks/new") %>
-</header>
+<div class="container">
+	<header>
+		<div class="page-header">
+			<ul class="nav nav-pills">
+				<li role="presentation"><%= link_to("Home", "/") %></li>
+				<li role="presentation"><%= link_to("About", "/about") %></li>
+				<li role="presentation"><%= link_to("Tasks", "/tasks") %></li>
+				<li role="presentation"><%= link_to("New", "/tasks/new") %></li>
+			</ul>
+		</div>
+	</header>
 
-<% if flash[:notice] %>
-	<%= flash[:notice] %>
-<% end %>
 
-<%= yield %>
+	<% if flash[:notice] %>
+		<div class="alert alert-success" role="alert">
+			<%= flash[:notice] %>
+		</div>
+	<% end %>
+
+
+	<%= yield %>
+
+
+	<footer>
+		<p>ALL RIGHTS RESERVED. ASAMI TANII 2018</p>
+	</footer>
+</div>
 
 </body>
 </html>

@@ -1,11 +1,16 @@
-New Tasks
+<h2>New Tasks</h2>
 
-<%= form_tag("/tasks") do %>
-		
+<%= form_tag("/tasks") do %>		
 	<% @task.errors.full_messages.each do |error| %>
-		<%= error %>
+		<div class="alert alert-danger" role="alert">
+			<%= error %>
+		</div>
 	<% end %>
 
-	<%= text_field_tag(:title, "#{@task.title}")%>
+	<div class="form-group">
+		<label>Title: </label>
+		<%= text_field_tag(:title, "#{@task.title}")%>
+	</div>
+	
 	<%= submit_tag("Submit") %>
 <% end %>

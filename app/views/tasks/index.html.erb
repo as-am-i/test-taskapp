@@ -1,9 +1,9 @@
-<h1>Tasks</h1>
+<h2>Task lists</h2>
 
-<ul>
+<div class="list-group">
 	<% @tasks.each do |task| %>
-		<li>
-			<%= link_to(task.title, "/tasks/#{task.id}") %>
-		</li>
+	<li class="list-group-item">
+		<%= link_to(task.title, "/tasks/#{task.id}") %>
+	</li>
 	<% end %>
-</ul>
+</div>

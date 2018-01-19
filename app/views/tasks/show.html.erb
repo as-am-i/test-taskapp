@@ -1,12 +1,10 @@
-<p>
-	<%= @task.title %>
-</p>
 
-<div>
-	<%= @task.created_at %>
-</div>
-
-<div>
-	<%= link_to("edit", "/tasks/#{@task.id}/edit") %>
-	<%= link_to("delete", "/tasks/#{@task.id}", method: "delete") %>
-</div>
+<ul class="list-unstyled">
+	<li><h2><%= @task.title %></h2></li>
+	<li><p><%= @task.created_at %></p></li>
+</ul>
+	
+<ul class="list-inline">
+	<li><%= link_to("edit", "/tasks/#{@task.id}/edit") %></li>
+	<li><%= link_to("delete", "/tasks/#{@task.id}", method: "delete") %></li>
+</ul>
