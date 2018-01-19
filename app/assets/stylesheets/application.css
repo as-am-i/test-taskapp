@@ -35,6 +35,5 @@ footer p {
 }
 
 footer {
-	position: fixed;
-	bottom: 50px;
+	margin-top: 5em;
 }
