@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   
-  get '/about' => 'welcome#about'
-  resources :tasks
+  get 'users/index'
+
+  get 'about' => 'welcome#about'
+  resources :tasks, :users
+  get 'signup' => 'users#new'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
