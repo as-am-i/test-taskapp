@@ -54,4 +54,8 @@ class UsersController < ApplicationController
 	flash[:notice] = "your account deleted successfully!"
 	redirect_to("/users")
   end
+
+  def login_form
+  	@user = User.find_by(id: params[:id])
+  end
 end

@@ -6,6 +6,8 @@ Rails.application.routes.draw do
   resources :tasks, :users
   get 'signup' => 'users#new'
 
+  get 'signin' => 'users#login_form'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
