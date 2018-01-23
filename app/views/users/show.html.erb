@@ -10,4 +10,5 @@
 	
 <ul class="list-inline">
 	<li><%= link_to("edit", "/users/#{@user.id}/edit") %></li>
+	<li><%= link_to("delete", "/users/#{@user.id}", method: :delete, data: {confirm: "Are you sure?"}) %></li>
 </ul>

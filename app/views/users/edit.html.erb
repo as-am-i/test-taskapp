@@ -1,6 +1,6 @@
 <h2>Edit user information</h2>
 
-<%= form_tag("/users/#{@user.id}", method: "patch", multipart: true) do %>		
+<%= form_tag("/users/#{@user.id}", method: :patch, multipart: true) do %>		
 	<% @user.errors.full_messages.each do |error| %>
 		<div class="alert alert-danger" role="alert">
 			<%= error %>

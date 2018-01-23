@@ -1,6 +1,6 @@
 <h2>Edit Tasks</h2>
 
-<%= form_tag("/tasks/#{@task.id}", method: "patch") do %>
+<%= form_tag("/tasks/#{@task.id}", method: :patch) do %>
 	
 	<% @task.errors.full_messages.each do |error| %>
 		<div class="alert alert-danger" role="alert">
