@@ -1,6 +1,11 @@
 <ul class="list-unstyled">
-	<li><h2><%= @user.name %></h2></li>
-	<li><p><%= @user.email %></p></li>
+	<div class="user_show">
+		<li><%= image_tag("/user_images/#{@user.image_name}") %></li>
+		<div class="clearfix">
+			<li><h2><%= @user.name %></h2></li>
+			<li><p><%= @user.email %></p></li>
+		</div>
+	</div>
 </ul>
 	
 <ul class="list-inline">

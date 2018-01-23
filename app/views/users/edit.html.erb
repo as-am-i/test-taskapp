@@ -1,6 +1,6 @@
 <h2>Edit user information</h2>
 
-<%= form_tag("/users/#{@user.id}", method: "patch") do %>		
+<%= form_tag("/users/#{@user.id}", method: "patch", multipart: true) do %>		
 	<% @user.errors.full_messages.each do |error| %>
 		<div class="alert alert-danger" role="alert">
 			<%= error %>
@@ -11,10 +11,17 @@
 		<label>Name: </label>
 		<%= text_field_tag(:name, "#{@user.name}")%>
 	</div>
+	<div class="form-group edit_image">
+		<label>Image: </label>
+		
+		<%= file_field_tag "image"%>
+		
+	</div>
 	<div class="form-group">
 		<label>Email: </label>
 		<%= text_field_tag(:email, "#{@user.email}")%>
 	</div>
+
 	
 	<%= submit_tag("Update") %>
 <% end %>

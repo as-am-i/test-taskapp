@@ -1,3 +1,39 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.list-group-item-parent {
+	overflow: hidden; // to recognize the height of the elements
+	display: flex !important; // to centerize the user name
+	align-items: center;
+}
+
+.user_left img {
+	width: 40px;	
+	height: 40px;
+	border-radius: 20%;
+	float: left;
+	margin-right: 10px;
+}
+
+.user_show {
+	overflow: hidden;
+	display: flex !important;
+	align-items: center;
+}
+
+.user_show img {
+	width: 80px;
+	height: 80px;
+	border-radius: 20%;
+	float: left;
+	margin-right: 10px;
+}
+
+.user_show h2 {
+	margin: 0;
+}
+
+.edit_image input {
+	display: inline-block !important;
+}
