@@ -15,9 +15,11 @@ class UsersController < ApplicationController
   	@user = User.new(
   		name: params[:name],
   		email: params[:email],
-  		image_name: "default_user.png"
+  		image_name: "default_user.png",
+  		password: params[:password]
   	)
   	if @user.save
+  		session[:user_id] = @user.id # make the user singned in
   		flash[:notice] = "Welcome, #{@user.name}. You have signed up successfully!"
   		redirect_to("/users/#{@user.id}")
   	else
@@ -56,6 +58,31 @@ class UsersController < ApplicationController
   end
 
   def login_form
-  	@user = User.find_by(id: params[:id])
+  	@user = User.new
   end
+
+  def login
+  	@user = User.find_by(email: params[:email], password: params[:password])
+
+  	if @user
+  		session[:user_id] = @user.id
+
+  		flash[:notice] = "You are successfully signed in."
+  		redirect_to("/tasks")
+  	else
+  		@error = "Your email/password invalid"
+
+  		@email = params[:email]
+  		@password = params[:password]
+
+  		render("/users/login_form")
+  	end
+  end
+
+  def logout
+  	session[:user_id] = nil
+  	flash[:notice] = "You are successfully signed out."
+  	redirect_to("/signin")
+  end
+
 end

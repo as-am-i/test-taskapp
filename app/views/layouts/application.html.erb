@@ -28,12 +28,18 @@
 		<div class="page-header">
 			<ul class="nav nav-pills">
 				<li role="presentation"><%= link_to("Home", "/") %></li>
-				<li role="presentation"><%= link_to("About", "/about") %></li>
-				<li role="presentation"><%= link_to("Tasks", "/tasks") %></li>
-				<li role="presentation"><%= link_to("NewTask", "/tasks/new") %></li>
-				<li role="presentation"><%= link_to("Users", "/users") %></li>
-				<li role="presentation"><%= link_to("SignUp", "/signup") %></li>
-				<li role="presentation"><%= link_to("SignIn", "/signin") %></li>
+				
+				<% if session[:user_id] %>
+					<li role="presentation"><%= link_to("Tasks", "/tasks") %></li>
+					<li role="presentation"><%= link_to("NewTask", "/tasks/new") %></li>
+					<li role="presentation"><%= link_to("Users", "/users") %></li>
+					<li role="presentation"><%= link_to("SignOut", "/signout", method: :post) %></li>
+					<li role="presentation">your id: <%= session[:user_id]%></li>
+				<% else %>
+					<li role="presentation"><%= link_to("About", "/about") %></li>
+					<li role="presentation"><%= link_to("SignUp", "/signup") %></li>
+					<li role="presentation"><%= link_to("SignIn", "/signin") %></li>
+				<% end %>
 			</ul>
 		</div>
 	</header>

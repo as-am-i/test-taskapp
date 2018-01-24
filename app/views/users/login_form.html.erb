@@ -1,14 +1,18 @@
 <h2>Sign In</h2>
 
-<%= form_tag("") do %>		
+<%= form_tag("/signin") do %>		
 
-<!-- error messages to be put here -->
+	<% if @error %>
+		<div class="alert alert-danger" role="alert">
+			<%= @error %>		
+		</div>
+	<% end %>
 
 	<div class="form-group">
 		<label>Email: </label>
-		<%= text_field_tag(:email, "")%>
+		<%= text_field_tag(:email, "#{@user.email}")%>
 	</div>
-		<div class="form-group">
+	<div class="form-group">
 		<label>Password: </label>
 		<%= password_field_tag(:password) %>
 	</div>

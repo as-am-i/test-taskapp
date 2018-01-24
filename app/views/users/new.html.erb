@@ -15,6 +15,10 @@
 		<label>Email: </label>
 		<%= text_field_tag(:email, "#{@user.email}")%>
 	</div>
+	<div class="form-group">
+		<label>Password: </label>
+		<%= password_field_tag(:password) %>
+	</div>
 	
 	<%= submit_tag("Submit") %>
 <% end %>
